@@ -1,0 +1,16 @@
+---
+- job:
+    name: modules-tflint
+    parent: golang-make
+    vars:
+      make_command: tflint
+
+- project:
+    merge-mode: squash-merge
+    default-branch: main
+    check:
+      jobs:
+        - modules-tflint
+    gate:
+      jobs:
+        - modules-tflint
