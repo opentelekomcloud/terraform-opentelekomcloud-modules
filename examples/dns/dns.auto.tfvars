@@ -65,9 +65,18 @@ dns_settings = {
     type        = "public"
     ttl         = 300
     email       = "email_pub@example.com"
-    vpc_id      = "REWRITE_IN_LOCALS"
-    region      = "REWRITE_IN_LOCALS"
     tags        = {}
-    recordsets = []
+    recordsets = [
+      {
+        subdomain   = "second_a"
+        type        = "A"
+        description = "a record set"
+        ttl         = 380
+        records     = ["10.1.1.0"]
+        tags        = {
+          "Recordset"   = "public_a"
+        }
+      },
+    ]
   }
 }

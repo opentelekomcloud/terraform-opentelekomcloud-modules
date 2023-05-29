@@ -53,8 +53,6 @@ locals {
       type        = var.dns_settings["public"]["type"]
       ttl         = var.dns_settings["public"]["ttl"]
       email       = var.dns_settings["public"]["email"]
-      vpc_id      = ""
-      region      = ""
       tags        = var.dns_settings["public"]["tags"]
       recordsets  = var.dns_settings["public"]["recordsets"]
     }
@@ -72,7 +70,7 @@ data "opentelekomcloud_vpc_subnet_v1" "subnet"  {
   name = var.dns_subnet
 }
 
-module "private_dns" {
+module "dns" {
   source = "../../modules/dns"
   dns_zone_settings = local.local_dns_settings
   default_tags_set  = var.default_tags_set
@@ -83,9 +81,9 @@ DNS OUTPUTS
 ==================================*/
 
 output "dns_zone_ids" {
-  value = { for k, v in module.private_dns.zone : k => v.id }
+  value = { for k, v in module.dns.zone : k => v.id }
 }
 
 output "dns_zone_recordsets_names" {
-  value = { for k, v in module.private_dns.recordset : k => v.name }
+  value = { for k, v in module.dns.recordset : k => v.name }
 }
