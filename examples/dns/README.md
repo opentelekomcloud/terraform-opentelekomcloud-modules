@@ -12,7 +12,7 @@ $ terraform plan
 $ terraform apply
 ```
 
-Note that this example may create resources which can cost money. Run `terraform destroy` when you don't need these resources.
+Note that this example will create resources which can cost money. Run `terraform destroy` when you don't need these resources.
 
 ## Requirements
 
