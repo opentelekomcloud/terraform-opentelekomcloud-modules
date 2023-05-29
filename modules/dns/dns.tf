@@ -9,12 +9,16 @@ resource "opentelekomcloud_dns_zone_v2" "zone" {
   ttl         = each.value["ttl"]
   email       = each.value["email"]
   type        = each.value["type"]
-  tags        = each.value["tags"]
 
   router {
     router_region = each.value["region"]
     router_id     = each.value["vpc_id"]
   }
+
+  tags = merge(
+    var.default_tags_set,
+    each.value["tags"],
+  )
 }
 
 resource "opentelekomcloud_dns_recordset_v2" "record" {
@@ -25,5 +29,9 @@ resource "opentelekomcloud_dns_recordset_v2" "record" {
   ttl         = each.value["ttl"]
   type        = each.value["type"]
   records     = each.value["records"]
-  tags        = each.value["tags"]
+
+  tags = merge(
+    var.default_tags_set,
+    each.value["tags"],
+  )
 }

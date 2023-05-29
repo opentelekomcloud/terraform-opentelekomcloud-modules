@@ -1,6 +1,11 @@
 /*=================================
 VARIABLES
 ==================================*/
+variable "default_tags_set" {
+  default     = {}
+  description = "Set of default tags for most of all resources (current values in top level vars file)"
+}
+
 variable "dns_zone_settings" {
   default = {
     /*Example:

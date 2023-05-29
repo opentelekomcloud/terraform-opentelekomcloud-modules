@@ -2,18 +2,17 @@
 DNS PREPARED MAPS
 ==================================*/
 
-private_dns_settings = {
+dns_settings = {
   private = {
-    name        = "example.opentelekomcloud" #Zone domain name
-    description = "Example Zone"             #zone description
-    type        = "private"                  #type of the zone
-    ttl         = 500                        #Caching period of the SOA record set (in seconds)
-    email       = "email_prv@example.com"       #Email address of the administrator managing the zone
-    vpc_id      = "REWRITE_IN_LOCALS"        #Id of used VPC
-    region      = "REWRITE_IN_LOCALS"        #Name of the current region
+    name        = "example.opentelekomcloud"
+    description = "Example Zone"
+    type        = "private"
+    ttl         = 500
+    email       = "email_prv@example.com"
+    vpc_id      = "REWRITE_IN_LOCALS"
+    region      = "REWRITE_IN_LOCALS"
     tags        = {
-      "Environment" = "test"
-      "Managed_by"  = "terraform"
+      "Zone" = "test"
     }
     recordsets = [
       {
@@ -23,42 +22,31 @@ private_dns_settings = {
         ttl         = 380
         records     = ["10.1.0.0"]
         tags        = {
-          "Environment" = "test"
-          "Managed_by"  = "terraform"
-          "Recordset"   = "first"
+          "Recordset"   = "private_a"
         }
       },
     ]
   }
   private_another = {
-    name        = "another.opentelekomcloud" #Zone domain name
-    description = "Example Zone other"       #zone description
-    type        = "private"                  #type of the zone
-    ttl         = 450                        #Caching period of the SOA record set (in seconds)
-    email       = "email_oth@example.com"    #Email address of the administrator managing the zone
-    vpc_id      = "REWRITE_IN_LOCALS"        #Id of used VPC
-    region      = "REWRITE_IN_LOCALS"        #Name of the current region
-    tags        = {
-      "Environment" = "test"
-      "Managed_by"  = "terraform"
-    }
+    name        = "another.opentelekomcloud"
+    description = "Example Zone other"
+    type        = "private"
+    ttl         = 450
+    email       = "email_oth@example.com"
+    vpc_id      = "REWRITE_IN_LOCALS"
+    region      = "REWRITE_IN_LOCALS"
+    tags        = {}
     recordsets = []
   }
-}
-
-public_dns_settings = {
   public = {
-    name        = "public.opentelekomcloud" #Zone domain name
-    description = "Example Zone"             #zone description
-    type        = "public"                   #type of the zone
-    ttl         = 300                        #Caching period of the SOA record set (in seconds)
-    email       = "email_pub@example.com"    #Email address of the administrator managing the zone
-    vpc_id      = "REWRITE_IN_LOCALS"        #Id of used VPC
-    region      = "REWRITE_IN_LOCALS"        #Name of the current region
-    tags        = {
-      "Environment" = "test"
-      "Managed_by"  = "terraform"
-    }
+    name        = "public.opentelekomcloud"
+    description = "Example Zone"
+    type        = "public"
+    ttl         = 300
+    email       = "email_pub@example.com"
+    vpc_id      = "REWRITE_IN_LOCALS"
+    region      = "REWRITE_IN_LOCALS"
+    tags        = {}
     recordsets = []
   }
 }
