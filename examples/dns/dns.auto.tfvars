@@ -1,5 +1,5 @@
 /*=================================
-DNS PREPARED MAPS
+DNS PREPARED MAP
 ==================================*/
 
 dns_settings = {
@@ -25,6 +25,16 @@ dns_settings = {
           "Recordset"   = "private_a"
         }
       },
+      {
+        subdomain   = "first_txt"
+        type        = "txt"
+        description = "txt record set"
+        ttl         = 3000
+        records     = ["v=spf1 include:my.example.try.com -none"]
+        tags        = {
+          "Recordset"   = "private_txt"
+        }
+      },
     ]
   }
   private_another = {
@@ -36,7 +46,18 @@ dns_settings = {
     vpc_id      = "REWRITE_IN_LOCALS"
     region      = "REWRITE_IN_LOCALS"
     tags        = {}
-    recordsets = []
+    recordsets = [
+      {
+        subdomain   = "cname"
+        type        = "cname"
+        description = "cname record set"
+        ttl         = 3600
+        records     = ["server1.example.com."]
+        tags        = {
+          "Recordset"   = "private_cname"
+        }
+      },
+    ]
   }
   public = {
     name        = "public.opentelekomcloud"

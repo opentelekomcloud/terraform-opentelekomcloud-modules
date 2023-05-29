@@ -3,24 +3,6 @@ DNS VARIABLES
 ==================================*/
 
 variable "dns_settings" {
-#  type = map(object({
-#    name        = string
-#    description = string
-#    type        = string
-#    ttl         = number
-#    email       = string
-#    vpc_id      = string
-#    region      = string
-#    tags        = map(any)
-#    recordsets    = map(object({
-#      subdomain   = string
-#      type        = string
-#      description = string
-#      ttl         = number
-#      records     = list(string)
-#      tags        = map(any)
-#    }))
-#  }))
   default     = {}
   description = "Main settings for private DNS."
 }
