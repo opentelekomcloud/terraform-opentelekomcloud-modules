@@ -27,9 +27,9 @@ No providers.
 
 ## Modules
 
-| Name                                          | Source              | Version |
-|-----------------------------------------------|---------------------|---------|
-| <a name="module_dns"></a> [dns](#module\_dns) | "../../modules/dns" | 0.0.1   |
+| Name                                          | Source                                                   | Version |
+|-----------------------------------------------|----------------------------------------------------------|---------|
+| <a name="module_dns"></a> [dns](#module\_dns) | "opentelekomcloud/modules/opentelekomcloud//modules/dns" | 0.0.1   |
 
 ## Resources
 
@@ -41,7 +41,7 @@ No inputs.
 
 ## Outputs
 
-| Name                                                                                               | Description                      |
-|----------------------------------------------------------------------------------------------------|----------------------------------|
-| <a name="output_dns_zone_ids"></a> [dns\_zone\_ids](#output\_zone\_ids)                            | The Ids of created Zones         |
-| <a name="output_dns_zone_recordsets_names"></a> [dns\_recordset\_names](#output\_recordset\_names) | The Names of created Record sets |
+| Name                                                                                                    | Description                      |
+|---------------------------------------------------------------------------------------------------------|----------------------------------|
+| <a name="output_dns_zone_ids"></a> [dns\_zone\_ids](#output\_dns\_zone\_ids)                            | The Ids of created Zones         |
+| <a name="output_dns_zone_recordsets_names"></a> [dns\_recordset\_names](#output\_dns\_recordset\_names) | The Names of created Record sets |
