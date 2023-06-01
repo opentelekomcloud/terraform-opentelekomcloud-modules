@@ -1,4 +1,4 @@
-# DNS
+# VPC Peering
 
 Configuration in this directory creates a 2 Peering connections and one of them will be accepted in second project.
 Second project aliased in `settings.tf` also you should know `project_ids` and `vpc_ids` of peered projects which put in `peering.auto.tfvars`.
