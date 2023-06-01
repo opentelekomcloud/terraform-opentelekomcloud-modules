@@ -72,6 +72,7 @@ data "opentelekomcloud_vpc_subnet_v1" "subnet"  {
 
 module "dns" {
   source = "../../modules/dns"
+
   dns_zone_settings = local.local_dns_settings
   default_tags_set  = var.default_tags_set
 }
