@@ -1,5 +1,5 @@
 /*=================================
-DNS PREPARED MAP
+NETWORK PREPARED MAP
 ==================================*/
 
 network_settings = {

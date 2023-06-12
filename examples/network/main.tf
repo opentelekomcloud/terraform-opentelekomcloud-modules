@@ -1,5 +1,5 @@
 /*=================================
-DNS VARIABLES
+NETWORK VARIABLES
 ==================================*/
 
 variable "network_settings" {
@@ -8,7 +8,7 @@ variable "network_settings" {
 }
 
 /*=================================
-DNS MODULES
+NETWORK MODULES
 ==================================*/
 
 module "network" {
@@ -18,7 +18,7 @@ module "network" {
 }
 
 /*=================================
-DNS OUTPUTS
+NETWORK OUTPUTS
 ==================================*/
 
 output "router_ids" {
