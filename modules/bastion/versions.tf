@@ -9,7 +9,3 @@ terraform {
     }
   }
 }
-
-provider "opentelekomcloud" {
-  cloud = "eu-de"
-}

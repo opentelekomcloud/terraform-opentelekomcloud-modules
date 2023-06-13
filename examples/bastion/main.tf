@@ -4,7 +4,7 @@ BASTION MODULES
 module "bastion" {
   source = "../../modules/bastion"
   subnet = {
-    id = opentelekomcloud_vpc_subnet_v1.subnet_1.id
+    id   = opentelekomcloud_vpc_subnet_v1.subnet_1.id
     cidr = opentelekomcloud_vpc_subnet_v1.subnet_1.cidr
   }
 }
