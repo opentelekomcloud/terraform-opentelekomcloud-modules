@@ -5,7 +5,6 @@ vpc_settings = {
     snat_enable = "true"
     tags        = {
       "Environment" = "test"
-      "Managed_by"  = "terraform"
     }
     subnets = [
       {
@@ -41,7 +40,6 @@ vpc_settings = {
     snat_enable = "true"
     tags        = {
       "Environment" = "test"
-      "Managed_by"  = "terraform"
     }
     subnets = [
       {

@@ -12,7 +12,7 @@ variable "vpc_settings" {
     vpc_name = { #You can use any string as key
       description = "desc"
       cidr        = "10.0.0.0/8"
-      enable_snat = "true"
+      snat_enable = "true"
       tags        = {
         "Environment" = "test"
         "Managed_by"  = "terraform"

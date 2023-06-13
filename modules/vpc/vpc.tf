@@ -9,7 +9,8 @@ resource "opentelekomcloud_vpc_v1" "vpc" {
   name        = each.key
   cidr        = each.value["cidr"]
   description = each.value["description"]
-  shared = data.opentelekomcloud_identity_project_v3.current.region == "eu-de" ? each.value["enable_snat"] : false
+
+  shared = data.opentelekomcloud_identity_project_v3.current.region == "eu-de" ? each.value["snat_enable"] : false
 
   tags = merge(
     var.default_tags_set,

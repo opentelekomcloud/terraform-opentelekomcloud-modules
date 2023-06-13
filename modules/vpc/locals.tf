@@ -17,7 +17,7 @@ locals {
       secondary_dns = subnet["secondary_dns"]
       ntp_addresses = subnet["ntp_addresses"]
       tags          = subnet["tags"]
-      subnet_key    = "${vpc_key}.${subnet_key}"
+      subnet_key    = "${vpc_key}_subnet.${subnet_key}"
     }]
   ])
 }
