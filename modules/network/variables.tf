@@ -47,8 +47,8 @@ variable "network_settings" {
       nameservers      = optional(list(string))
       enable_dhcp      = optional(bool)
       gateway_ip       = optional(string)
-      cidr             = optional(string)
-      ip_version       = number
+      cidr             = string
+      ip_version       = optional(number)
       allocation_pools = optional(list(map(any)), [])
     })))
   }))
