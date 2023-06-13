@@ -27,6 +27,7 @@ variable "vpc_settings" {
           description   = "desc"
           primary_dns   = "8.8.8.8"
           secondary_dns = "1.1.1.1"
+          ntp_addresses = "10.100.0.35,10.100.0.36"
           tags          = {
             "Resource" = "first"
           }
@@ -38,7 +39,7 @@ variable "vpc_settings" {
   type = map(object({
     cidr        = string
     description = optional(string)
-    enable_snat = optional(bool, "true")
+    snat_enable = optional(bool, "true")
     tags        = optional(map(any))
     subnets     = optional(list(object({
       name          = string
@@ -49,6 +50,7 @@ variable "vpc_settings" {
       description   = optional(string)
       primary_dns   = optional(string)
       secondary_dns = optional(string)
+      ntp_addresses = optional(string)
       tags          = optional(map(any))
     })))
   }))
