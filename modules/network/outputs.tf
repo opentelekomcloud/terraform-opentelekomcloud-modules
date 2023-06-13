@@ -13,6 +13,6 @@ output "router" {
   value = opentelekomcloud_networking_router_v2.router
 }
 
-#output "interface" {
-#  value = opentelekomcloud_networking_router_interface_v2.interface
-#}
+output "interface" {
+  value = opentelekomcloud_networking_router_interface_v2.interface
+}

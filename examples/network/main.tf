@@ -4,7 +4,7 @@ NETWORK VARIABLES
 
 variable "network_settings" {
   default     = {}
-  description = "Main settings for private DNS."
+  description = "Main settings for Network."
 }
 
 /*=================================
@@ -30,6 +30,9 @@ output "network_ids" {
 }
 
 output "subnet_ids" {
-  value = { for k, v in module.network.subnet : v.name => v.id }
+  value = { for k, v in module.network.subnet : k => v.id }
+}
 
+output "interface_ids" {
+  value = { for k, v in module.network.interface: k => v.id }
 }

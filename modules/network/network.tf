@@ -23,7 +23,9 @@ resource "opentelekomcloud_networking_network_v2" "network" {
 }
 
 resource "opentelekomcloud_networking_subnet_v2" "subnet" {
-  for_each = {for k, v in local.subnets : k => v}
+  for_each = {
+    for subnet in local.subnets : "${subnet["network_key"]}.${subnet["subnet_key"]}" => subnet
+  }
 
   name             = each.value["name"]
   no_gateway       = each.value["no_gateway"]
@@ -34,18 +36,21 @@ resource "opentelekomcloud_networking_subnet_v2" "subnet" {
   ip_version       = each.value["ip_version"]
 
   dynamic "allocation_pools" {
-    for_each = each.value["allocation_pools"]
+    for_each = { for k, v in each.value["allocation_pools"]: k => v }
     content {
-      start = each.value["allocation_pools"][each.key]["start"]
-      end = each.value["allocation_pools"][each.key]["end"]
+      start = each.value["allocation_pools"][allocation_pools.key]["start"]
+      end = each.value["allocation_pools"][allocation_pools.key]["end"]
     }
   }
 
   network_id = each.value["network_id"]
 }
 
-#resource "opentelekomcloud_networking_router_interface_v2" "interface" {
-#  for_each = opentelekomcloud_networking_subnet_v2.subnet
-#  router_id = opentelekomcloud_networking_router_v2.router.id
-#  subnet_id = each.value["id"]
-#}
+resource "opentelekomcloud_networking_router_interface_v2" "interface" {
+  for_each = {
+    for subnet in local.subnets : "${subnet["network_key"]}.${subnet["subnet_key"]}" => subnet
+  }
+
+  router_id = each.value["router_id"]
+  subnet_id = opentelekomcloud_networking_subnet_v2.subnet[each.value["subnet_index"]].id
+}

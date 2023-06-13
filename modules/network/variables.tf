@@ -10,21 +10,26 @@ variable "network_settings" {
   default = {
     /*Example:
     router_name = { #You can use any string as key
-      distributed      = "true"                     #Distributed or not
-      external_gateway = "private|public"           #External gateway id
-      admin_state_up   = "true"                     #Administrative up/down status
-      enable_snat      = "true"                     #Enable Source NAT for the router
-      network_name     = "my_network"               #Network
+      distributed      = "true"                                 #Distributed or not
+      external_gateway = "0c11922f-5d37-4a5c-a2ac-5d52860c3014" #External gateway id
+      admin_state_up   = "true"                                 #Administrative up/down status
+      enable_snat      = "true"                                 #Enable Source NAT for the router
+      network_name     = "my_network"                           #Network
       subnets = [
       {
         name             = "subnet_name"
         no_gateway       = "false"
-        nameservers      = []
+        nameservers      = ["8.8.8.8", "1.1.1.1"]
         enable_dhcp      = "true"
         gateway_ip       = "192.168.199.1"
         cidr             = "192.168.199.0/24"
         ip_version       = 4
-        allocation_pools = {}
+        allocation_pools = [
+          {
+            start = "192.168.199.50"
+            end   = "192.168.199.200"
+          },
+        ]
       },
     ]
   }
