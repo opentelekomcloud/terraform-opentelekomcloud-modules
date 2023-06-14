@@ -23,8 +23,8 @@ variable "sg-rules" {
   type = set(object({
     direction        = string
     ethertype        = string
-    description      = string
-    type             = string
+    description      = optional(string)
+    type             = optional(string)
     protocol         = optional(string)
     port_range_min   = optional(string)
     port_range_max   = optional(string)
@@ -68,7 +68,6 @@ variable "sg-rules" {
       port_range_min = 443
       port_range_max = 443
       description    = "Allow connection to 443 port from internet"
-      type           = "ip"
     },
     {
       direction      = "ingress"
@@ -77,7 +76,6 @@ variable "sg-rules" {
       port_range_min = 22
       port_range_max = 22
       description    = "Allow SSH connection from internet"
-      type           = "ip"
     },
   ]
 }
@@ -85,7 +83,7 @@ variable "sg-rules" {
 variable "availability_zone" {
   type        = string
   description = "Bastion host availability zone."
-  default     = ""
+  default = ""
 }
 
 variable "key_pair" {
@@ -105,14 +103,14 @@ variable "bastion_volume" {
   default = 20
 }
 
-variable "tags" {
+variable "default_tags_set" {
   type        = map(string)
-  description = "Bastion tag set."
+  description = "Set of default tags for most of all resources."
   default     = {}
 }
 
-variable "cloud_init" {
-  description = "Custom Cloud-init configuration."
+variable "user_data" {
+  description = "Custom ECS user data configuration."
   default     = ""
 }
 

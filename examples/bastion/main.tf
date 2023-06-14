@@ -7,6 +7,10 @@ module "bastion" {
     id   = opentelekomcloud_vpc_subnet_v1.subnet_1.id
     cidr = opentelekomcloud_vpc_subnet_v1.subnet_1.cidr
   }
+  user_data = file("default_cloud_init.sh")
+  default_tags_set = {
+    "Managed_by" = "terraform"
+  }
 }
 
 resource "opentelekomcloud_vpc_v1" "vpc_1" {

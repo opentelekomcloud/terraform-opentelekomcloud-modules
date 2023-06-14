@@ -9,10 +9,7 @@ resource "opentelekomcloud_compute_instance_v2" "bastion" {
   security_groups = [opentelekomcloud_networking_secgroup_v2.secgroup_bastion.name]
   availability_zone = var.availability_zone
 
-  user_data = var.cloud_init != "" ? var.cloud_init : templatefile("${path.module}/default_cloud_init.sh", {
-    cidr            = var.subnet.cidr,
-    bastion_address = local.bastion_local_ip,
-  })
+  user_data = var.user_data != "" ? base64encode(var.user_data) : var.user_data
 
   network {
     uuid           = var.subnet.id
@@ -27,7 +24,8 @@ resource "opentelekomcloud_compute_instance_v2" "bastion" {
     uuid                  = data.opentelekomcloud_images_image_v2.current_image.id
   }
 
-  tags = var.tags
+  tags = var.default_tags_set
+
 }
 
 resource "opentelekomcloud_compute_keypair_v2" "pair" {
