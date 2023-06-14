@@ -2,7 +2,7 @@
 LOCALS
 ==================================*/
 locals {
-  sg-list = tolist(var.sg-rules)
+  sg_list = tolist(var.sg_rules)
 }
 
 locals {

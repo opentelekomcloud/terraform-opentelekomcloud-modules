@@ -29,9 +29,9 @@ Note that this example will create resources which can cost money. Run `terrafor
 
 ## Modules
 
-| Name                                                  | Source                                                      | Version |
-|-------------------------------------------------------|-------------------------------------------------------------|---------|
-| <a name="module_dns"></a> [bastion](#module\_bastion) | "opentelekomcloud/modules/opentelekomcloud/modules/bastion" | 0.0.1   |
+| Name                                                      | Source                                                      | Version |
+|-----------------------------------------------------------|-------------------------------------------------------------|---------|
+| <a name="module_bastion"></a> [bastion](#module\_bastion) | "opentelekomcloud/modules/opentelekomcloud/modules/bastion" | 0.0.3   |
 
 ## Resources
 

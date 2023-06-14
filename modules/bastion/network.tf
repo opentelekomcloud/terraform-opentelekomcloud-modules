@@ -20,7 +20,7 @@ resource "opentelekomcloud_networking_secgroup_v2" "secgroup_bastion" {
 }
 
 resource "opentelekomcloud_networking_secgroup_rule_v2" "bastion_sg_rules" {
-  for_each          = { for idx, value in local.sg-list : idx => value }
+  for_each          = { for idx, value in local.sg_list : idx => value }
   direction         = each.value["direction"]
   ethertype         = each.value["ethertype"]
   protocol          = each.value["protocol"]

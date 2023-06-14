@@ -19,7 +19,7 @@ variable "bastion_image" {
   description = "Bastion host image"
 }
 
-variable "sg-rules" {
+variable "sg_rules" {
   type = set(object({
     direction        = string
     ethertype        = string

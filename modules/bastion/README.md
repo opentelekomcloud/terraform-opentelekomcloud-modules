@@ -91,18 +91,18 @@ No modules.
 | <a name="input_subnet_cidr"></a> [subnet.cidr](#input\_cidr) | Subnet CIDR. | `string`       | `null`  |   yes    |
 | <a name="input_subnet_id"></a> [subnet.id](#input\_id)       | Subnet ID.   | `string`       | `null`  |   yes    |
 
-### sg-rules
+### sg_rules
 
 | Name                                                                                          | Description                                                              | Type     | Default | Required |
 |-----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|----------|---------|:--------:|
-| <a name="input_direction"></a> [sg\-rules.direction](#input\_direction)                       | The direction of the rule, valid values are `ingress` or `egress`.       | `string` | `null`  |   yes    |
-| <a name="input_ethertype"></a> [sg\-rules.ethertype](#input\ethertype)                        | The layer 3 protocol type, valid values are `IPv4` or `IPv6`.            | `string` | `null`  |   yes    |
-| <a name="input_description"></a> [sg\-rules.description](#input\_description)                 | The description of the rule.                                             | `string` | `null`  |    no    |
-| <a name="input_type"></a> [sg\-rules.type](#input\_type)                                      | Specifying this parameter as `sg` will create security group level rule. | `string` | `null`  |    no    |
-| <a name="input_protocol"></a> [sg\-rules.protocol](#input\_protocol)                          | The layer 4 protocol type.                                               | `string` | `null`  |    no    |
-| <a name="input_port_range_min"></a> [sg\-rules.port_range_min](#input\_port_range_min)        | The lower part of the allowed port range.                                | `string` | `null`  |    no    |
-| <a name="input_port_range_max"></a> [sg\-rules.port_range_max](#input\_port_range_max)        | The higher part of the allowed port range.                               | `string` | `null`  |    no    |
-| <a name="intput_remote_ip_prefix"></a> [sg\-rules.remote_ip_prefix](#input\_remote_ip_prefix) | The remote CIDR.                                                         | `string` | `null`  |    no    |
+| <a name="input_direction"></a> [sg\_rules.direction](#input\_direction)                       | The direction of the rule, valid values are `ingress` or `egress`.       | `string` | `null`  |   yes    |
+| <a name="input_ethertype"></a> [sg\_rules.ethertype](#input\ethertype)                        | The layer 3 protocol type, valid values are `IPv4` or `IPv6`.            | `string` | `null`  |   yes    |
+| <a name="input_description"></a> [sg\_rules.description](#input\_description)                 | The description of the rule.                                             | `string` | `null`  |    no    |
+| <a name="input_type"></a> [sg\_rules.type](#input\_type)                                      | Specifying this parameter as `sg` will create security group level rule. | `string` | `null`  |    no    |
+| <a name="input_protocol"></a> [sg\_rules.protocol](#input\_protocol)                          | The layer 4 protocol type.                                               | `string` | `null`  |    no    |
+| <a name="input_port_range_min"></a> [sg\_rules.port_range_min](#input\_port_range_min)        | The lower part of the allowed port range.                                | `string` | `null`  |    no    |
+| <a name="input_port_range_max"></a> [sg\_rules.port_range_max](#input\_port_range_max)        | The higher part of the allowed port range.                               | `string` | `null`  |    no    |
+| <a name="intput_remote_ip_prefix"></a> [sg\_rules.remote_ip_prefix](#input\_remote_ip_prefix) | The remote CIDR.                                                         | `string` | `null`  |    no    |
 
 ## Outputs
 

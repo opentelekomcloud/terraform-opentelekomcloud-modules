@@ -27,3 +27,18 @@ resource "opentelekomcloud_vpc_subnet_v1" "subnet_1" {
   availability_zone = "eu-de-02"
   ntp_addresses     = "10.100.0.33,10.100.0.34"
 }
+
+/*=================================
+BASTION OUTPUTS
+==================================*/
+output "bastion_sg_id" {
+  value = module.bastion.bastion_sg_id
+}
+
+output "bastion_address" {
+  value = module.bastion.bastion_address
+}
+
+output "bastion_private_address" {
+  value = module.bastion.bastion_private_address
+}
