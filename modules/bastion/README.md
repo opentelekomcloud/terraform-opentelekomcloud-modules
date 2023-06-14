@@ -32,7 +32,7 @@ resource "opentelekomcloud_vpc_subnet_v1" "subnet_1" {
 }
 
 module "bastion" {
-  source = "../../modules/bastion"
+  source = "opentelekomcloud/modules/opentelekomcloud/modules/bastion"
   subnet = {
     id   = opentelekomcloud_vpc_subnet_v1.subnet_1.id
     cidr = opentelekomcloud_vpc_subnet_v1.subnet_1.cidr
