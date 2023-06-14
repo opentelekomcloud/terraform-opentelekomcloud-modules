@@ -58,7 +58,7 @@ variable "main_vpc" {
 }
 
 module "peering" {
-  source = "../../modules/vpc-peering"
+  source = "opentelekomcloud/modules/opentelekomcloud//modules/vpc-peering"
 
   requester_vpc_peering_settings = var.requester_vpc_peering_settings
   accepter_vpc_peering_settings  = var.accepter_vpc_peering_settings
@@ -67,7 +67,7 @@ module "peering" {
 
 ## Examples
 
-* [DNS](https://github.com/opentelekomcloud/terraform-opentelekomcloud-modules/blob/main/examples/vpc-peering)
+* [vpc-peering](https://github.com/opentelekomcloud/terraform-opentelekomcloud-modules/blob/main/examples/vpc-peering)
 
 ## Requirements
 
@@ -89,25 +89,25 @@ No modules.
 
 ## Inputs
 
-| Name                                                                                                                               | Description                       | Type          | Default | Required |
-|------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------|---------------|---------|:--------:|
-| <a name="input_requester_vpc_peering_settings"></a> [requester\_vpc\_peering\_settings](#input\_requester\_vpc\_peering\_settings) | Map of peering settings.          | `map(object)` | `{}`    |    no    |
-| <a name="input_accepter_vpc_peering_settings"></a> [accepter\_vpc\_peering\_settings](#input\_accepter\_vpc\_peering\_settings)    | Map of peering accepter settings. | `map(object)` | `{}`    |    no    |
+| Name                                                                                                                            | Description                       | Type          | Default | Required |
+|---------------------------------------------------------------------------------------------------------------------------------|-----------------------------------|---------------|---------|:--------:|
+| <a name="input_requester_vpc_peering_settings"></a> [requester_vpc_peering_settings](#input\_requester\_vpc\_peering\_settings) | Map of peering settings.          | `map(object)` | `{}`    |    no    |
+| <a name="input_accepter_vpc_peering_settings"></a> [accepter_vpc_peering_settings](#input\_accepter\_vpc\_peering\_settings)    | Map of peering accepter settings. | `map(object)` | `{}`    |    no    |
 
 ### requester_vpc_peering_settings
 
-| Name                                                                             | Description                                                                                    | Type     | Default | Required |
-|----------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|----------|---------|:--------:|
-| <a name="input_peer_tenant_id"></a> [peer\_tenant\_id](#input\_peer\_tenant\_id) | Specifies the ID of the project to which a VPC involved in the VPC peering connection belongs. | `string` | `null`  |   yes    |
-| <a name="input_peer_vpc_id"></a> [peer\_vpc\_id](#input\_peer\_vpc\_id)          | Receiver VPC ID.                                                                               | `string` | `null`  |   yes    |
-| <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id)                           | Requester VPC ID.                                                                              | `string` | `null`  |   yes    |
+| Name                                                                           | Description                                                                                    | Type     | Default | Required |
+|--------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|----------|---------|:--------:|
+| <a name="input_peer_tenant_id"></a> [peer_tenant_id](#input\_peer\_tenant\_id) | Specifies the ID of the project to which a VPC involved in the VPC peering connection belongs. | `string` | `null`  |   yes    |
+| <a name="input_peer_vpc_id"></a> [peer_vpc_id](#input\_peer\_vpc\_id)          | Receiver VPC ID.                                                                               | `string` | `null`  |   yes    |
+| <a name="input_vpc_id"></a> [vpc_id](#input\_vpc\_id)                          | Requester VPC ID.                                                                              | `string` | `null`  |   yes    |
 
 ### accepter_vpc_peering_settings
 
-| Name                                                                                                       | Description                              | Type     | Default | Required |
-|------------------------------------------------------------------------------------------------------------|------------------------------------------|----------|---------|:--------:|
-| <a name="input_peer_vpc_connection_id"></a> [peer\_vpc\_connection\_id](#input\_peer\_vpc\_connection\_id) | Specifies the VPC peering connection ID. | `string` | `null`  |   yes    |
-| <a name="input_is_accept"></a> [is\_accept](#input\_is\_accept)                                            | Accept connection or not                 | `bool`   | `null`  |   yes    |
+| Name                                                                                                    | Description                              | Type     | Default | Required |
+|---------------------------------------------------------------------------------------------------------|------------------------------------------|----------|---------|:--------:|
+| <a name="input_peer_vpc_connection_id"></a> [peer_vpc_connection_id](#input\_peer\_vpc\_connection\_id) | Specifies the VPC peering connection ID. | `string` | `null`  |   yes    |
+| <a name="input_is_accept"></a> [is_accept](#input\_is\_accept)                                          | Accept connection or not                 | `bool`   | `null`  |   yes    |
 
 ## Outputs
 

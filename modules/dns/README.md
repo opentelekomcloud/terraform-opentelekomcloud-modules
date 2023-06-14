@@ -71,7 +71,7 @@ locals {
 }
 
 module "dns" {
-  source = "../../modules/dns"
+  source = "opentelekomcloud/modules/opentelekomcloud//modules/dns"
   
   dns_zone_settings = local.local_dns_settings
   default_tags_set  = var.default_tags_set
@@ -85,7 +85,7 @@ module "dns" {
 ## Requirements
 
 | Name                                                                                           | Version   |
-| ---------------------------------------------------------------------------------------------- |-----------|
+|------------------------------------------------------------------------------------------------|-----------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform)                      | >= 0.13.0 |
 | <a name="requirement_opentelekomcloud"></a> [opentelekomcloud](#requirement\_opentelekomcloud) | >= 1.23.9 |
 
@@ -109,28 +109,28 @@ No modules.
 
 ### dns_zone_settings
 
-| Name                                                                                    | Description                                           | Type           | Default | Required |
-|-----------------------------------------------------------------------------------------|-------------------------------------------------------|----------------|---------|:--------:|
-| <a name="input_name"></a> [dns\_zone\_settings.name](#input\_name)                      | Zone domain name.                                     | `string`       | `null`  |   yes    |
-| <a name="input_description"></a> [dns\_zone\_settings.description](#input\_description) | Zone description.                                     | `string`       | `""`    |    no    |
-| <a name="input_type"></a> [dns\_zone\_settings.type](#input\_type)                      | Type of the zone.                                     | `string`       | `null`  |   yes    |
-| <a name="input_ttl"></a> [dns\_zone\_settings.ttl](#input\_ttl)                         | Caching period of the SOA record set (in seconds).    | `number`       | `null`  |   yes    |
-| <a name="input_email"></a> [dns\_zone\_settings.email](#input\_email)                   | Email address of the administrator managing the zone. | `string`       | `null`  |   yes    |
-| <a name="input_vpc_id"></a> [dns\_zone\_settings.vpc_id](#input\_vpc_id)                | Id of VPC.                                            | `string`       | `""`    |    no    |
-| <a name="input_region"></a> [dns\_zone\_settings.region](#input\_region)                | Name of the current region.                           | `string`       | `""`    |    no    |
-| <a name="input_tags"></a> [dns\_zone\_settings.tags](#input\_tags)                      | Tags (will be merged with default_tags_set).          | `map(any)`     | `{}`    |    no    |
-| <a name="input_recordsets"></a> [dns\_zone\_settings.recordsets](#input\_recordsets)    | List of recordsets.                                   | `list(object)` | `[]`    |    no    |
+| Name                                                                | Description                                           | Type           | Default | Required |
+|---------------------------------------------------------------------|-------------------------------------------------------|----------------|---------|:--------:|
+| <a name="input_name"></a> [name](#input\_name)                      | Zone domain name.                                     | `string`       | `null`  |   yes    |
+| <a name="input_description"></a> [description](#input\_description) | Zone description.                                     | `string`       | `""`    |    no    |
+| <a name="input_type"></a> [type](#input\_type)                      | Type of the zone.                                     | `string`       | `null`  |   yes    |
+| <a name="input_ttl"></a> [ttl](#input\_ttl)                         | Caching period of the SOA record set (in seconds).    | `number`       | `null`  |   yes    |
+| <a name="input_email"></a> [email](#input\_email)                   | Email address of the administrator managing the zone. | `string`       | `null`  |   yes    |
+| <a name="input_vpc_id"></a> [vpc_id](#input\_vpc_id)                | Id of VPC.                                            | `string`       | `""`    |    no    |
+| <a name="input_region"></a> [region](#input\_region)                | Name of the current region.                           | `string`       | `""`    |    no    |
+| <a name="input_tags"></a> [tags](#input\_tags)                      | Tags (will be merged with default_tags_set).          | `map(any)`     | `{}`    |    no    |
+| <a name="input_recordsets"></a> [recordsets](#input\_recordsets)    | List of recordsets.                                   | `list(object)` | `[]`    |    no    |
 
 ### dns_zone_settings.recordsets
 
-| Name                                                                                                                    | Description                                  | Type           | Default | Required |
-|-------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|----------------|---------|:--------:|
-| <a name="input_subdomain"></a> [dns\_zone\_settings.recordsets.subdomain](#input\_subdomain)                            | Name of the record subdomain.                | `string`       | `null`  |   yes    |
-| <a name="input_recordset_type"></a> [dns\_zone\_settings.recordsets.type](#input\_recordset_type)                       | Type of the record set.                      | `string`       | `null`  |   yes    |
-| <a name="input_recordset_description"></a> [dns\_zone\_settings.recordsets.description](#input\_recordset\_description) | Description of the record set.               | `string`       | `null`  |    no    |
-| <a name="input_recordset_ttl"></a> [dns\_zone\_settings.recordsets.ttl](#input\_recordset\_ttl)                         | Ttl of the record set.                       | `number`       | `null`  |    no    |
-| <a name="input_recordset_records"></a> [dns\_zone\_settings.recordsets.records](#input\_recordset\_records)             | List of records.                             | `list(string)` | `[]`    |   yes    |
-| <a name="input_recordsets_tags"></a> [dns\_zone\_settings.recordsets.tags](#input\_recordsets\_tags)                    | Tags (will be merged with default_tags_set). | `map(any)`     | `{}`    |    no    |
+| Name                                                                                     | Description                                  | Type           | Default | Required |
+|------------------------------------------------------------------------------------------|----------------------------------------------|----------------|---------|:--------:|
+| <a name="input_subdomain"></a> [subdomain](#input\_subdomain)                            | Name of the record subdomain.                | `string`       | `null`  |   yes    |
+| <a name="input_recordset_type"></a> [type](#input\_recordset_type)                       | Type of the record set.                      | `string`       | `null`  |   yes    |
+| <a name="input_recordset_description"></a> [description](#input\_recordset\_description) | Description of the record set.               | `string`       | `null`  |    no    |
+| <a name="input_recordset_ttl"></a> [ttl](#input\_recordset\_ttl)                         | Ttl of the record set.                       | `number`       | `null`  |    no    |
+| <a name="input_recordset_records"></a> [records](#input\_recordset\_records)             | List of records.                             | `list(string)` | `[]`    |   yes    |
+| <a name="input_recordsets_tags"></a> [tags](#input\_recordsets\_tags)                    | Tags (will be merged with default_tags_set). | `map(any)`     | `{}`    |    no    |
 
 ## Outputs
 
