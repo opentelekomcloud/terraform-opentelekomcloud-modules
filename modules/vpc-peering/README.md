@@ -76,10 +76,6 @@ module "peering" {
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform)                      | >= 0.13.0 |
 | <a name="requirement_opentelekomcloud"></a> [opentelekomcloud](#requirement\_opentelekomcloud) | >= 1.23.9 |
 
-## Modules
-
-No modules.
-
 ## Resources
 
 | Name                                                                                                                                                                                                       | Type     | Count     |
