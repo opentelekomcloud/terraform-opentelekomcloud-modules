@@ -1,6 +1,6 @@
 # VPC
 
-Configuration in this directory creates a 2 VPC with first with 2 subnets, and second with one.
+Configuration in this directory creates a 2 VPC first with 2 subnets, and second with one.
 
 ## Usage
 
