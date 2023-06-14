@@ -9,7 +9,7 @@ variable "default_tags_set" {
 variable "vpc_settings" {
   default = {
     /*Example:
-    vpc_name = { #You can use any string as key
+    vpc_name = { #Here you set vpc name as key
       description = "desc"
       cidr        = "10.0.0.0/8"
       snat_enable = "true"

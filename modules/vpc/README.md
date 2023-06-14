@@ -96,13 +96,15 @@ module "vpc" {
 
 ### vpc_settings
 
-| Name                                                                                 | Description                                                       | Type           | Default | Required |
-|--------------------------------------------------------------------------------------|-------------------------------------------------------------------|----------------|---------|:--------:|
-| <a name="input_cidr"></a> [cidr](#input\_cidr)                        | Specifies the available IP address ranges for subnets in the VPC. | `string`       | `null`  |   yes    |
-| <a name="input_description"></a> [description](#input\_description)   | Provides supplementary information about the VPC.                 | `string`       | `null`  |    no    |
+_vpc name will be taken from `vpc_settings` vpc key._
+
+| Name                                                                 | Description                                                       | Type           | Default | Required |
+|----------------------------------------------------------------------|-------------------------------------------------------------------|----------------|---------|:--------:|
+| <a name="input_cidr"></a> [cidr](#input\_cidr)                       | Specifies the available IP address ranges for subnets in the VPC. | `string`       | `null`  |   yes    |
+| <a name="input_description"></a> [description](#input\_description)  | Provides supplementary information about the VPC.                 | `string`       | `null`  |    no    |
 | <a name="input_snat_enable"></a> [snat_enable](#input\_snat\_enable) | Specifies whether the shared SNAT function is enabled.            | `bool`         | `true`  |    no    |
-| <a name="input_tags"></a> [tags](#input\_tags)                        | Tags (will be merged with default_tags_set).                      | `map(any)`     | `{}`    |    no    |
-| <a name="input_subnets"></a> [subnets](#input\_subnets)               | List of subnets.                                                  | `list(object)` | `[]`    |    no    |
+| <a name="input_tags"></a> [tags](#input\_tags)                       | Tags (will be merged with default_tags_set).                      | `map(any)`     | `{}`    |    no    |
+| <a name="input_subnets"></a> [subnets](#input\_subnets)              | List of subnets.                                                  | `list(object)` | `[]`    |    no    |
 
 ### vpc_settings.subnets
 
