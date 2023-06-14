@@ -27,10 +27,6 @@ Note that this example will create resources which can cost money. Run `terrafor
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform)                      | >= 0.13.0 |
 | <a name="requirement_opentelekomcloud"></a> [opentelekomcloud](#requirement\_opentelekomcloud) | >= 1.23.9 |
 
-## Providers
-
-No providers.
-
 ## Modules
 
 | Name                                                  | Source                                                      | Version |
