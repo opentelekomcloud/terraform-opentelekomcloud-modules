@@ -21,10 +21,6 @@ Note that this example will create resources which can cost money. Run `terrafor
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform)                      | >= 0.13.0 |
 | <a name="requirement_opentelekomcloud"></a> [opentelekomcloud](#requirement\_opentelekomcloud) | >= 1.23.9 |
 
-## Providers
-
-No providers.
-
 ## Modules
 
 | Name                                          | Source                                                   | Version |
@@ -33,11 +29,10 @@ No providers.
 
 ## Resources
 
-No resources.
-
-## Inputs
-
-No inputs.
+| Name                                                                                                                                                                   | Type        | Count |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|-------|
+| [opentelekomcloud_identity_project_v3.current](https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/data-sources/identity_project_v3) | data-source | 1     |
+| [opentelekomcloud_vpc_subnet_v1.subnete](https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/data-sources/vpc_subnet_v1)             | data-source | 1     |
 
 ## Outputs
 
