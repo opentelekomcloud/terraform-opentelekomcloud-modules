@@ -32,16 +32,7 @@ Note that this example will create resources which can cost money. Run `terrafor
 | Name                                                      | Source                                                      | Version |
 |-----------------------------------------------------------|-------------------------------------------------------------|---------|
 | <a name="module_bastion"></a> [bastion](#module\_bastion) | "opentelekomcloud/modules/opentelekomcloud/modules/bastion" | 0.0.3   |
-
-## Resources
-
-| Name                                                                               | Source                                                                                          |
-|------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| <a name="resource_vpc"></a> [opentelekomcloud_vpc_v1](#resource\_vpc)              | "opentelekomcloud/terraform-provider-opentelekomcloud/blob/devel/opentelekomcloud/services/vpc" |
-| <a name="resource_subnet"></a> [opentelekomcloud_vpc_subnet_v1](#resource\_subnet) | "opentelekomcloud/terraform-provider-opentelekomcloud/blob/devel/opentelekomcloud/services/vpc" |
-## Inputs
-
-No inputs.
+| <a name="module_vpc"></a> [vpc](#module\_vpc)             | "opentelekomcloud/modules/opentelekomcloud//modules/vpc"    | 0.0.3   |
 
 ## Outputs
 
