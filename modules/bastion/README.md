@@ -70,47 +70,47 @@ No modules.
 
 ## Inputs
 
-| Name                                                                              | Description                                           | Type           | Default                                                                                                                             | Required |
-|-----------------------------------------------------------------------------------|-------------------------------------------------------|----------------|-------------------------------------------------------------------------------------------------------------------------------------|:--------:|
-| <a name="instance_type"></a> [instance\_type](#input\_instance\_type)             | Bastion host instance type.                           | `string`       | `s2.large.4`                                                                                                                        |    no    |
-| <a name="instance_name"></a> [instance\_name](#input\_instance\_name)             | Bastion instance name.                                | `string`       | `bastion-host`                                                                                                                      |    no    |
- | <a name="bastion_image"></a> [bastion\_image](#input\_bastion\_image)             | Bastion instance image.                               | `string`       | `Standard_Ubuntu_22.04_latest`                                                                                                      |    no    |
- | <a name="availability_zone"></a> [availability\_zone](#input\_availability\_zone) | Bastion availability zone.                            | `string`       | `""`                                                                                                                                |    no    |
-| <a name="bastion_volume"></a> [bastion\_volume](#input\_bastion\_volume)          | Bastion EVS volume size.                              | `numer`        | `20`                                                                                                                                |    no    |
-| <a name="input_tags"></a> [default\_tags\_set](#input\_tags)                      | Tags.                                                 | `map(any)`     | `{}`                                                                                                                                |    no    |
-| <a name="input_key_pair"></a> [key\_pair](#input\_key\_pair)                      | Bastion keypair.                                      | `object`       | [Default values](https://github.com/opentelekomcloud/terraform-opentelekomcloud-modules/tree/main/modules/bastion/variables.tf#L97) |    no    |
-| <a name="input_user_data"></a> [user\_data](#input\_user\_data)                   | The user data to provide when launching the instance. | `string`       | `""`                                                                                                                                |    no    |
-| <a name="input_subnet"></a> [subnet](#input\_subnet)                              | Subnet information.                                   | `object`       | `null`                                                                                                                              |   yes    |
-| <a name="input_sg_rules"></a> [sg\_rules](#input\_sg\_rules)                      | List of security group rules.                         | `list(object)` | [Default values](https://github.com/opentelekomcloud/terraform-opentelekomcloud-modules/tree/main/modules/bastion/variables.tf#L34) |    no    |
+| Name                                                                                    | Description                                           | Type           | Default                                                                                                                             | Required |
+|-----------------------------------------------------------------------------------------|-------------------------------------------------------|----------------|-------------------------------------------------------------------------------------------------------------------------------------|:--------:|
+| <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type)             | Bastion host instance type.                           | `string`       | `s2.large.4`                                                                                                                        |    no    |
+| <a name="input_instance_name"></a> [instance\_name](#input\_instance\_name)             | Bastion instance name.                                | `string`       | `bastion-host`                                                                                                                      |    no    |
+ | <a name="input_bastion_image"></a> [bastion\_image](#input\_bastion\_image)             | Bastion instance image.                               | `string`       | `Standard_Ubuntu_22.04_latest`                                                                                                      |    no    |
+ | <a name="input_availability_zone"></a> [availability\_zone](#input\_availability\_zone) | Bastion availability zone.                            | `string`       | `""`                                                                                                                                |    no    |
+| <a name="input_bastion_volume"></a> [bastion\_volume](#input\_bastion\_volume)          | Bastion EVS volume size.                              | `numer`        | `20`                                                                                                                                |    no    |
+| <a name="input_tags"></a> [default\_tags\_set](#input\_tags)                            | Tags.                                                 | `map(any)`     | `{}`                                                                                                                                |    no    |
+| <a name="input_key_pair"></a> [key\_pair](#input\_key\_pair)                            | Bastion keypair.                                      | `object`       | [Default values](https://github.com/opentelekomcloud/terraform-opentelekomcloud-modules/tree/main/modules/bastion/variables.tf#L97) |    no    |
+| <a name="input_user_data"></a> [user\_data](#input\_user\_data)                         | The user data to provide when launching the instance. | `string`       | `""`                                                                                                                                |    no    |
+| <a name="input_subnet"></a> [subnet](#input\_subnet)                                    | Subnet information.                                   | `object`       | `null`                                                                                                                              |   yes    |
+| <a name="input_sg_rules"></a> [sg\_rules](#input\_sg\_rules)                            | List of security group rules.                         | `list(object)` | [Default values](https://github.com/opentelekomcloud/terraform-opentelekomcloud-modules/tree/main/modules/bastion/variables.tf#L34) |    no    |
 
 
 ### subnet
 
-| Name                                                         | Description  | Type           | Default | Required |
-|--------------------------------------------------------------|--------------|----------------|---------|:--------:|
-| <a name="input_subnet_cidr"></a> [subnet.cidr](#input\_cidr) | Subnet CIDR. | `string`       | `null`  |   yes    |
-| <a name="input_subnet_id"></a> [subnet.id](#input\_id)       | Subnet ID.   | `string`       | `null`  |   yes    |
+| Name                                                          | Description  | Type           | Default | Required |
+|---------------------------------------------------------------|--------------|----------------|---------|:--------:|
+| <a name="input_subnet_cidr"></a> [cidr](#input\_subnet\_cidr) | Subnet CIDR. | `string`       | `null`  |   yes    |
+| <a name="input_subnet_id"></a> [id](#input\_subnet\_id)       | Subnet ID.   | `string`       | `null`  |   yes    |
 
 ### sg_rules
 
-| Name                                                                                          | Description                                                              | Type     | Default | Required |
-|-----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|----------|---------|:--------:|
-| <a name="input_direction"></a> [sg\_rules.direction](#input\_direction)                       | The direction of the rule, valid values are `ingress` or `egress`.       | `string` | `null`  |   yes    |
-| <a name="input_ethertype"></a> [sg\_rules.ethertype](#input\ethertype)                        | The layer 3 protocol type, valid values are `IPv4` or `IPv6`.            | `string` | `null`  |   yes    |
-| <a name="input_description"></a> [sg\_rules.description](#input\_description)                 | The description of the rule.                                             | `string` | `null`  |    no    |
-| <a name="input_type"></a> [sg\_rules.type](#input\_type)                                      | Specifying this parameter as `sg` will create security group level rule. | `string` | `null`  |    no    |
-| <a name="input_protocol"></a> [sg\_rules.protocol](#input\_protocol)                          | The layer 4 protocol type.                                               | `string` | `null`  |    no    |
-| <a name="input_port_range_min"></a> [sg\_rules.port_range_min](#input\_port_range_min)        | The lower part of the allowed port range.                                | `string` | `null`  |    no    |
-| <a name="input_port_range_max"></a> [sg\_rules.port_range_max](#input\_port_range_max)        | The higher part of the allowed port range.                               | `string` | `null`  |    no    |
-| <a name="intput_remote_ip_prefix"></a> [sg\_rules.remote_ip_prefix](#input\_remote_ip_prefix) | The remote CIDR.                                                         | `string` | `null`  |    no    |
+| Name                                                                                         | Description                                                              | Type     | Default | Required |
+|----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|----------|---------|:--------:|
+| <a name="input_sg_direction"></a> [direction](#input\_sg\_direction)                         | The direction of the rule, valid values are `ingress` or `egress`.       | `string` | `null`  |   yes    |
+| <a name="input_sg_ethertype"></a> [ethertype](#input\_sg\_ethertype)                         | The layer 3 protocol type, valid values are `IPv4` or `IPv6`.            | `string` | `null`  |   yes    |
+| <a name="input_sg_description"></a> [description](#input\_sg\_description)                   | The description of the rule.                                             | `string` | `null`  |    no    |
+| <a name="input_sg_type"></a> [type](#input\_sg\_type)                                        | Specifying this parameter as `sg` will create security group level rule. | `string` | `null`  |    no    |
+| <a name="input_sg_protocol"></a> [protocol](#input\_sg\_protocol)                            | The layer 4 protocol type.                                               | `string` | `null`  |    no    |
+| <a name="input_sg_port_range_min"></a> [port_range_min](#input\_sg\_port\_range\_min)        | The lower part of the allowed port range.                                | `string` | `null`  |    no    |
+| <a name="input_sg_port_range_max"></a> [port_range_max](#input\_sg\_port\_range\_max)        | The higher part of the allowed port range.                               | `string` | `null`  |    no    |
+| <a name="intput_sg_remote_ip_prefix"></a> [remote_ip_prefix](#input\_sg\_remote\_ip\_prefix) | The remote CIDR.                                                         | `string` | `null`  |    no    |
 
 ## Outputs
 
-| Name                                                                                                | Description                |
-|-----------------------------------------------------------------------------------------------------|----------------------------|
-| <a name="output_bastion_sg_id"></a> [security_group_id](#output\_bastion_sg_id)                     | Bastion security group ID. |
-| <a name="output_bastion_address"></a> [bastion_external_address](#output\_bastion_external_address) | Bastion EIP.               |
-| <a name="output_bastion_address"></a> [bastion_private_address](#output\_bastion_private_address)   | Bastion private address.   |
+| Name                                                                                                           | Description                |
+|----------------------------------------------------------------------------------------------------------------|----------------------------|
+| <a name="output_bastion_sg_id"></a> [security_group_id](#output\_bastion\_sg\_id)                              | Bastion security group ID. |
+| <a name="output_bastion_external_address"></a> [bastion_external_address](#output\_bastion\_external\_address) | Bastion EIP.               |
+| <a name="output_bastion_private_address"></a> [bastion_private_address](#output\_bastion\_private\_address)    | Bastion private address.   |
 
 ## Authors
 

@@ -36,8 +36,8 @@ Note that this example will create resources which can cost money. Run `terrafor
 
 ## Outputs
 
-| Name                                                                                                | Description                |
-|-----------------------------------------------------------------------------------------------------|----------------------------|
-| <a name="output_bastion_sg_id"></a> [security_group_id](#output\_bastion_sg_id)                     | Bastion security group ID. |
-| <a name="output_bastion_address"></a> [bastion_external_address](#output\_bastion_external_address) | Bastion EIP.               |
-| <a name="output_bastion_address"></a> [bastion_private_address](#output\_bastion_private_address)   | Bastion private address.   |
+| Name                                                                                                           | Description                |
+|----------------------------------------------------------------------------------------------------------------|----------------------------|
+| <a name="output_bastion_sg_id"></a> [security_group_id](#output\_bastion\_sg\_id)                              | Bastion security group ID. |
+| <a name="output_bastion_external_address"></a> [bastion_external_address](#output\_bastion\_external\_address) | Bastion EIP.               |
+| <a name="output_bastion_private_address"></a> [bastion_private_address](#output\_bastion\_private\_address)    | Bastion private address.   |
