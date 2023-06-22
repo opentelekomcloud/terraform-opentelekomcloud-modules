@@ -1,4 +1,8 @@
 resource "opentelekomcloud_rds_backup_v3" "test" {
-  instance_id = opentelekomcloud_rds_instance_v3.this.id
-  name        = "backup-test"
+  for_each = var.rds_backup_settings
+
+  name        = each.key
+  description = each.value["description"]
+  databases   = each.value["databases"]
+  instance_id = each.value["instance_id"]
 }
