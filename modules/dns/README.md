@@ -32,14 +32,14 @@ dns_settings = {
     vpc_id      = "REWRITE_IN_LOCALS"
     region      = "REWRITE_IN_LOCALS"
     tags        = {}
-    recordsets  = [
+    recordsets = [
       {
         subdomain   = "cname"
         type        = "cname"
         description = "cname record set"
         ttl         = 3600
         records     = ["server1.example.com."]
-        tags        = {
+        tags = {
           "Recordset" = "private_cname"
         }
       },
@@ -49,7 +49,7 @@ dns_settings = {
 
 data "opentelekomcloud_identity_project_v3" "current" {}
 
-data "opentelekomcloud_vpc_subnet_v1" "subnet"  {
+data "opentelekomcloud_vpc_subnet_v1" "subnet" {
   name = "my-subnet"
 }
 
